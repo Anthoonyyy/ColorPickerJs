@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Choisissez vos couleurs : </h1>
+
+    <label for="textColorPicker">Text Color Picker</label>
+    <input type="color" value="#8E5572"  id="textColorPicker">
+
+    <label for="backgroundColorPicker">Background Color Picker</label>
+    <input type="color" id="backgroundColorPicker">
+
+    <hr>
+
+    <br>
+    <label for="userComment">Commentaire:</label><br>
+    <textarea id="userComment" cols="33" rows="5" placeholder="Votre commentaire ici.." minlength="30"
+    maxlength="140"></textarea>
+    <span id="userCommentCounter">0</span><span>/140</span>
+    
+
+
+    <script src="script.js"></script>
+    <script src="userCommentLength.js"></script>
+</body>
+</html>
