@@ -28,9 +28,13 @@ backgroundColorPicker.addEventListener("change", ChangeColorBackground);
 textColorPicker.addEventListener("change", ChangeColorText);
 
 
-//paragraphe.addEventListener("click",scroll)
-//function scroll() {
- //   const paragraphe = document.querySelector("box1");
- //   paragraphe.scrollIntoView();
- // }
 
+let titres = document.querySelectorAll(".scroll");
+
+for(let i=0; i < titres.length;i++){
+titres[i].addEventListener("click", clickTitres);
+}
+
+function clickTitres(){
+ this.scrollIntoView({behavior : "smooth"});
+}
