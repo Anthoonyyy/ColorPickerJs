@@ -27,6 +27,7 @@ function ChangeColorText(){
 backgroundColorPicker.addEventListener("change", ChangeColorBackground);
 textColorPicker.addEventListener("change", ChangeColorText);
 
+////////////////////////////////         Scroll Into View             /////////////////////////////////////////////////////////
 
 
 let titres = document.querySelectorAll(".scroll");
@@ -37,4 +38,24 @@ titres[i].addEventListener("click", clickTitres);
 
 function clickTitres(){
  this.scrollIntoView({behavior : "smooth"});
+}  
+
+///////////////////////////////////////////////// On wheel ////////////////////////////////////////////////////
+
+
+document.addEventListener("wheel", scrollToNext, {passive: false});
+let indexTitres = 0;
+
+function scrollToNext(event){
+  event.preventDefault();
+  if(event.deltaY > 0 ){
+    indexTitres++;    
+  }
+  else{
+    indexTitres--;
+    if (indexTitres < 0) {
+      indexTitres++;
+    }
+  }
+  titres[indexTitres].scrollIntoView({behavior : "smooth"});
 }
