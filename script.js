@@ -48,14 +48,21 @@ let indexTitres = 0;
 
 function scrollToNext(event){
   event.preventDefault();
+
   if(event.deltaY > 0 ){
     indexTitres++;    
   }
+  if(indexTitres === titres.length){
+    indexTitres = 0
+  }
   else{
     indexTitres--;
+    if(indexTitres === -1) indexTitres = titres.length;
     if (indexTitres < 0) {
       indexTitres++;
     }
+    
   }
   titres[indexTitres].scrollIntoView({behavior : "smooth"});
+  
 }
